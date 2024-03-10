@@ -1,10 +1,12 @@
-import os
+import streamlit as st
 from openai import OpenAI
-from dotenv import load_dotenv
+# import os
+# from dotenv import load_dotenv
 
 # Assuming you've set your OpenAI API key
-load_dotenv()
-OpenAI.api_key = os.getenv("OPENAI_API_KEY")
+# load_dotenv()
+# OpenAI.api_key = os.getenv("OPENAI_API_KEY")
+OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI()
 
 prompts = {
